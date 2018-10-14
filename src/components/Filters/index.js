@@ -34,7 +34,7 @@ class Filters extends Component {
             <div className="columns filters"> 
                 <div className="field column is-7">
                     <div className="control is-medium has-icons-right">
-                        <input className="input is-medium" type="text" placeholder="Restaurant or Food" name="name" value={ name } onChange={ this.onChange } />
+                        <input className="input is-medium" type="text" placeholder="Restaurant or Address" name="name" value={ name } onChange={ this.onChange } />
                         <span className="icon is-medium is-right"><i className="fas fa-search"></i></span>
                     </div>
                 </div>

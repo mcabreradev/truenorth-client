@@ -14,7 +14,7 @@ export const filterRestaurants = (state) => {
     .sort((last, next) => {
 
         if (sortBy === "") {
-            return last.commercialName - next.commercialName; // sort by name ASC
+            return last.commercialName > next.commercialName ? 1 : -1; // sort by name ASC 
         }
 
         // next.rating - last.rating -> ASC

@@ -56,23 +56,17 @@ export const filterData = () => (dispatch, getState) => {
 };
 
 export const setName = (name) => (dispatch, getState) => {
-
     try {
-
         dispatch({
             type: SET_NAME,
             payload: name
         });
 
         // fake async delay
-        setTimeout(() => {
-            
-            dispatch({
-                type: FILTER_RESTAURANTS,
-                payload: filterRestaurants(getState().data)
-            });
-
-        }, 400);
+        setTimeout(() => dispatch({
+            type: FILTER_RESTAURANTS,
+            payload: filterRestaurants(getState().data)
+        }), 400);
         
 
     } catch (error) {
@@ -81,40 +75,19 @@ export const setName = (name) => (dispatch, getState) => {
 };
 
 export const setSortBy = (sortBy) => async (dispatch, getState) => {
-    
-    dispatch({
-        type: TOGGLE_LOADING,
-        payload: true
-    });
-
     try {
-
         dispatch({
             type: SET_SORTBY,
             payload: sortBy
         });
 
         // fake async delay
-        setTimeout(() => {
-
-            dispatch({
-                type: FILTER_RESTAURANTS,
-                payload: filterRestaurants(getState().data)
-            });
-
-            dispatch({
-                type: TOGGLE_LOADING,
-                payload: false
-            });
-        }, 500);
+        setTimeout(() => dispatch({
+            type: FILTER_RESTAURANTS,
+            payload: filterRestaurants(getState().data)
+        }), 100);
         
-
     } catch (error) {
         console.error('Error sorting Restaurants action', error);
-
-        dispatch({
-            type: TOGGLE_LOADING,
-            payload: false
-        });
     }
 };

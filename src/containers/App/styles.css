@@ -34,3 +34,7 @@
 .is-danger, .has-background-danger {
   background-color: #F52F41 !important;
 }
+
+.field-body {
+  display: block;
+}
