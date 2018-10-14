@@ -1,0 +1,39 @@
+.restaurant-details {
+    position: relative;
+}
+
+.order-button {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.restaurant figure img {
+    width: 110px;
+    height: 110px;
+}
+
+.restaurant-name {
+    padding-bottom: 15px;
+}
+
+.restaurant-rating {
+    padding-bottom: 10px;
+}
+
+.restaurant-tag {
+    margin-right: 10px;
+}
+
+.restaurant-reviews {
+    margin-left: 10px;
+    padding-top: 4px;
+}
+
+.restaurant-marker {
+
+}
+
+.restaurant-address {
+    margin-left: 5px;
+}
