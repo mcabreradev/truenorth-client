@@ -28,6 +28,7 @@
 .restaurant-reviews {
     margin-left: 10px;
     padding-top: 4px;
+    cursor: pointer;
 }
 
 .restaurant-marker {

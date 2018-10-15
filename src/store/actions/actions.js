@@ -5,7 +5,8 @@ import {
     FILTER_RESTAURANTS,
     SET_NAME,
     SET_SORTBY,
-    TOGGLE_LOADING
+    TOGGLE_LOADING,
+    TOGGLE_MODAL,
 } from './types';
 
 import {
@@ -40,7 +41,7 @@ export const fetchRestaurants = () => async (dispatch, getState) => {
         });
 
     } catch (error) {
-        console.error('Error fetching Restaurants action', error);
+        console.error(error);
         dispatch({
             type: TOGGLE_LOADING,
             payload: false
@@ -70,7 +71,7 @@ export const setName = (name) => (dispatch, getState) => {
         
 
     } catch (error) {
-        console.error('Error filtering Restaurants action', error);
+        console.error(error);
     }
 };
 
@@ -88,6 +89,19 @@ export const setSortBy = (sortBy) => async (dispatch, getState) => {
         }), 100);
         
     } catch (error) {
-        console.error('Error sorting Restaurants action', error);
+        console.error(error);
+    }
+};
+
+export const toggleModal = (isActive, resto_id) => (dispatch, getState) => {
+    console.log(typeof resto_id);
+    try {
+        dispatch({
+            type: TOGGLE_MODAL,
+            payload: isActive,
+            reviewedRestaurant: typeof resto_id !== "undefined" ? getState().data.restaurants.find(resto => resto._id === resto_id) : []
+        });
+    } catch (error) {
+        console.error(error);
     }
 };

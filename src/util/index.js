@@ -22,3 +22,19 @@ export const filterRestaurants = (state) => {
         return sortBy === "highest_rated" ? next.rating - last.rating : last.rating - next.rating;
     });
 }
+
+export const findColor = (rating) => {
+    let color = "has-background-success";
+
+    if (rating < 2){
+        color = "has-background-danger";
+    }
+    if (rating >=2 && rating <= 3){
+        color = "has-background-warning";
+    }
+    else if(rating >=3 && rating <= 4){
+        color = "has-background-info";
+    }
+
+    return color;
+}

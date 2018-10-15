@@ -3,7 +3,8 @@ import {
   FILTER_RESTAURANTS,
   SET_NAME,
   SET_SORTBY,
-  TOGGLE_LOADING
+  TOGGLE_LOADING,
+  TOGGLE_MODAL,
   } from '../actions/types';
   
   const initialState = {
@@ -12,6 +13,8 @@ import {
     name: "",
     sortBy: "",
     isLoading: false,
+    isModalActive: false,
+    reviewedRestaurant: []
   };
   
   export default function (state = initialState, action) {
@@ -45,6 +48,13 @@ import {
         return {
           ...state,
           isLoading: action.payload
+        };
+
+      case TOGGLE_MODAL:
+        return {
+          ...state,
+          isModalActive: action.payload,
+          reviewedRestaurant: action.reviewedRestaurant
         };
   
       default:

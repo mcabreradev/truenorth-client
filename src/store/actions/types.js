@@ -3,3 +3,4 @@ export const FILTER_RESTAURANTS = "FILTER_RESTAURANTS";
 export const SET_NAME = "SET_NAME";
 export const SET_SORTBY = "SET_SORTBY";
 export const TOGGLE_LOADING = "TOGGLE_LOADING";
+export const TOGGLE_MODAL = "TOGGLE_MODAL";

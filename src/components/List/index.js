@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchRestaurants } from '../../store/actions/actions';
+import { fetchRestaurants, toggleModal } from '../../store/actions/actions';
 
 import Wrapper from '../../containers/Wrapper';
-import { Filters, Restaurant, Loading } from '../../components';
+import { Filters, Restaurant, Loading, Modal } from '../../components';
 
 
 import './styles.css';
@@ -11,11 +11,15 @@ import './styles.css';
 class List extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.onClickOpenReview = this.onClickOpenReview.bind(this);
     }
 
     componentWillMount() {
        this.props.fetchRestaurants();
+    }
+
+    onClickOpenReview(_id){
+        this.props.toggleModal(true, _id);
     }
 
     render() { 
@@ -31,9 +35,11 @@ class List extends Component {
 
                 <div className="columns is-multiline">
                     <div className="column is-12-desktop is-12-tablet">
-                        { restaurants.map( resto => <Restaurant {...resto} key={resto._id} />)  }
+                        { restaurants.map( resto => <Restaurant {...resto} key={resto._id} onClick={this.onClickOpenReview}/>)  }
                     </div>
                 </div>
+
+                <Modal/>
 
             </Wrapper>
          );
@@ -43,9 +49,7 @@ class List extends Component {
 List.defaultProps = {  
     renderLoading: <div className="container">loading...</div>, 
     tryAgain: <div className="container">Restaurant was not found!, try again</div>, 
-    restaurants: [],
-    name: "",
-    selectedSortby: "",
+    restaurants: []
 };
 
 const mapStateToProps = state => ({
@@ -55,4 +59,7 @@ const mapStateToProps = state => ({
     selectedSortby: state.data.selectedSortby ? state.data.selectedSortby : false
 });
 
-export default connect(mapStateToProps, { fetchRestaurants })(List);
+export default connect(mapStateToProps, { 
+    fetchRestaurants,
+    toggleModal 
+})(List);
