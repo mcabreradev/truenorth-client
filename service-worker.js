@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/truenorth-client/precache-manifest.3072716763b667b10ee0ec8fb53121f3.js"
+  "/truenorth-client/precache-manifest.94750886bfc0746c0a83aeb9cbc148a0.js"
 );
 
 workbox.clientsClaim();
