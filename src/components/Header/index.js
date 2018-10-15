@@ -7,10 +7,8 @@ const styles = {
 const Header = () => ( 
   <nav className="navbar is-fixed-top is-danger">
     <div className="navbar-brand">
-        <span className="navbar-item has-text-weight-semibold is-size-4">Restoservice</span>
-        <small className="has-text-weight-light" style={styles}>
-            v1.0
-        </small>
+        <a href="/"><span className="navbar-item has-text-weight-semibold is-size-4 has-text-white">Restoservice</span></a>
+        <small className="has-text-weight-light" style={styles}> v1.0</small>
         <div className="navbar-burger burger" data-target="navMenuColorinfo-example"> <span /> <span /> <span />
         </div>
     </div>

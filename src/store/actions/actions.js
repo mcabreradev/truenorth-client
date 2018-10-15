@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import {
     FETCH_RESTAURANTS,
     FILTER_RESTAURANTS,
@@ -8,11 +6,8 @@ import {
     TOGGLE_LOADING,
     TOGGLE_MODAL,
 } from './types';
-
-import {
-    ENDPOINT,
-    filterRestaurants
-} from '../../util';
+import { filterRestaurants } from '../../util';
+import { findAll, findById } from '../../util/api';
 
 export const fetchRestaurants = () => async (dispatch, getState) => {
     try {
@@ -22,7 +17,7 @@ export const fetchRestaurants = () => async (dispatch, getState) => {
             payload: true
         });
 
-        const response = await axios.get(ENDPOINT + '/restaurants');
+        const response = await findAll();
         const restaurants = response.data.data;
 
         dispatch({
@@ -94,7 +89,6 @@ export const setSortBy = (sortBy) => async (dispatch, getState) => {
 };
 
 export const toggleModal = (isActive, resto_id) => (dispatch, getState) => {
-    console.log(typeof resto_id);
     try {
         dispatch({
             type: TOGGLE_MODAL,

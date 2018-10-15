@@ -8,7 +8,7 @@ import { Filters, Restaurant, Loading, Modal } from '../../components';
 
 import './styles.css';
 
-class List extends Component {
+class Restaurants extends Component {
     constructor(props) {
         super(props);
         this.onClickOpenReview = this.onClickOpenReview.bind(this);
@@ -46,7 +46,7 @@ class List extends Component {
     }
 }
  
-List.defaultProps = {  
+Restaurants.defaultProps = {  
     renderLoading: <div className="container">loading...</div>, 
     tryAgain: <div className="container">Restaurant was not found!, try again</div>, 
     restaurants: []
@@ -62,4 +62,4 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, { 
     fetchRestaurants,
     toggleModal 
-})(List);
+})(Restaurants);

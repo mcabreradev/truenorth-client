@@ -3,7 +3,7 @@ import "bulma-extensions/dist/css/bulma-extensions.min.css";
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { Header, Error } from "../../components";
-import List from "../../components/List";
+import { Restaurants } from "../../components";
 
 import './styles.css';
 
@@ -15,8 +15,9 @@ class App extends Component {
         
         <Router>
           <Switch>
-            <Route exact path={`${process.env.PUBLIC_URL}/`} component={List} />
-            <Route exact path={`${process.env.PUBLIC_URL}/list`} component={List} />
+            <Route exact path={`${process.env.PUBLIC_URL}/`} component={Restaurants} />
+            <Route exact path={`${process.env.PUBLIC_URL}/restaurants`} component={Restaurants} />
+            <Route exact path={`${process.env.PUBLIC_URL}/restaurants/:id`} component={Restaurants} />
             <Route component={Error} />
           </Switch>
         </Router>

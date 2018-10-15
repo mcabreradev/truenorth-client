@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import Rating from '../Rating';
 import { findColor } from '../../util';
 
@@ -16,7 +17,7 @@ class Restaurant extends Component {
     }
 
     render() { 
-        const { logo, commercialName, rating, reviews, address } = this.props;
+        const { logo, commercialName, rating, reviews, address, _id } = this.props;
 
         return (
             <div className="box restaurant">
@@ -45,7 +46,7 @@ class Restaurant extends Component {
                         </div>
 
                         <div className="column">
-                            <a className="button is-small is-danger is-pulled-right order-button" href="/">Order food</a>
+                            <Link to={`/restaurants/${_id}`}><span className="button is-small is-danger is-pulled-right order-button"> Order food</span></Link>
                         </div>
                     </div>
                 </article>
