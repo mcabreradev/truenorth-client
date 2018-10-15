@@ -46,7 +46,7 @@ class Restaurant extends Component {
                         </div>
 
                         <div className="column">
-                            <Link to={`/restaurants/${_id}`}><span className="button is-small is-danger is-pulled-right order-button"> Order food</span></Link>
+                            <Link to={`${process.env.PUBLIC_URL}/restaurants/${_id}`}><span className="button is-small is-danger is-pulled-right order-button"> Order food</span></Link>
                         </div>
                     </div>
                 </article>
