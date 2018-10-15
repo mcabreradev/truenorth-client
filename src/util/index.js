@@ -1,5 +1,3 @@
-export const ENDPOINT = "https://mcabreradev-truenorth-api.herokuapp.com";
-
 export const filterRestaurants = (state) => {
 
     const {
