@@ -6,6 +6,7 @@ import Loading from './Loading';
 import Restaurants from './Restaurants';
 import Restaurant from './Restaurant';
 import Modal from './Modal';
+import Order from './Order'
 
 export {
     Error,
@@ -15,4 +16,5 @@ export {
     Restaurant,
     Loading,
     Modal,
+    Order,
 };

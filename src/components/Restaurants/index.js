@@ -1,47 +1,47 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchRestaurants, toggleModal } from '../../store/actions/actions';
-
-import Wrapper from '../../containers/Wrapper';
-import { Filters, Restaurant, Loading, Modal } from '../../components';
-
-
+import { Restaurant, Loading, Modal } from '../../components';
+import FilterContainer from '../../containers/FiltersContainer';
 import './styles.css';
 
+import styled from 'styled-components';
+
+const Container = styled.div`
+  top: 40px;
+  position: relative;
+`;
 class Restaurants extends Component {
+
     constructor(props) {
         super(props);
-        this.onClickOpenReview = this.onClickOpenReview.bind(this);
+        this.onClickHandlerOpenReview = this.onClickHandlerOpenReview.bind(this);
     }
 
     componentWillMount() {
        this.props.fetchRestaurants();
     }
 
-    onClickOpenReview(_id){
-        this.props.toggleModal(true, _id);
+    onClickHandlerOpenReview(resto_id){
+        this.props.toggleModal(true, resto_id);
     }
 
     render() { 
-
-        const { restaurants , isLoading } = this.props;
+        const { restaurants , isLoading, name, selectedSortby, tryAgain, renderLoading } = this.props;
 
         return ( 
-            <Wrapper>
-
+            <Container className="container">
                 <Loading isActive={isLoading} />
-
-                <Filters />
-
+                <FilterContainer />
                 <div className="columns is-multiline">
                     <div className="column is-12-desktop is-12-tablet">
-                        { restaurants.map( resto => <Restaurant {...resto} key={resto._id} onClick={this.onClickOpenReview}/>)  }
+                        { 
+                            restaurants.length ? 
+                            restaurants.map( resto => <Restaurant {...resto} key={resto._id} onClick={this.onClickHandlerOpenReview}/>) : 
+                            (name.length || selectedSortby.length) ? tryAgain : renderLoading 
+                        }
                     </div>
                 </div>
-
-                <Modal/>
-
-            </Wrapper>
+                <Modal {...this.props}/>
+            </Container>
          );
     }
 }
@@ -49,17 +49,6 @@ class Restaurants extends Component {
 Restaurants.defaultProps = {  
     renderLoading: <div className="container">loading...</div>, 
     tryAgain: <div className="container">Restaurant was not found!, try again</div>, 
-    restaurants: []
 };
 
-const mapStateToProps = state => ({
-    restaurants: state.data.filteredRestaurants,
-    name: state.data.name,
-    isLoading: state.data.isLoading,
-    selectedSortby: state.data.selectedSortby ? state.data.selectedSortby : false
-});
-
-export default connect(mapStateToProps, { 
-    fetchRestaurants,
-    toggleModal 
-})(Restaurants);
+export default Restaurants;

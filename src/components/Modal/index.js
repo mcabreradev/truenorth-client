@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { toggleModal } from '../../store/actions/actions';
 import { findColor } from '../../util';
-
 import './styles.css';
 
 class Modal extends Component {
@@ -20,7 +17,6 @@ class Modal extends Component {
         const { isModalActive, reviewedRestaurant } = this.props;
 
         return isModalActive ? (
-            
             <div className={ "modal " + (isModalActive ? "is-active" : "")}>
                 <div className="modal-background"></div>
                 <div className="modal-content">
@@ -37,7 +33,6 @@ class Modal extends Component {
                                                 <span className="has-text-grey has-text-weight-semibold">{ review.name }: </span>
                                                 "<span className="is-italic">{ review.review }</span>"
                                             </p>
-                                            
                                         </div>
                                     )
                                 })
@@ -52,11 +47,4 @@ class Modal extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    isModalActive: state.data.isModalActive,
-    reviewedRestaurant: state.data.reviewedRestaurant,
- });
-
-export default connect(mapStateToProps, {
-    toggleModal,
-})(Modal);
+export default Modal;
