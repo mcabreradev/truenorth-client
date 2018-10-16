@@ -18,7 +18,7 @@ import {
     isLoading: false,
     isModalActive: false,
     reviewedRestaurant: [],
-    totals: []
+    totalSelectedMeals: []
   };
   
   export default function (state = initialState, action) {
@@ -70,8 +70,8 @@ import {
       case SET_TOTAL_PRICE:
         return {
           ...state,
-          totals: {
-            ...state.totals,
+          totalSelectedMeals: {
+            ...state.totalSelectedMeals,
             [action.mealId] : {
               total: action.total
             }

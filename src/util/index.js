@@ -70,3 +70,5 @@ export const loopOverTotals = (totals) => {
 
 return totalFull;
 }
+
+export const toCurrency = number => '$' + number.toLocaleString('es-AR');

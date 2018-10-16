@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import { findColor } from '../../util';
 import Rating from '../Rating';
 import Modal from '../Modal';
-import { loopOverTotals } from '../../util';
+import { loopOverTotals, toCurrency } from '../../util';
 
 const Container = styled.div`
   top: 40px;
   position: relative;
+  padding-bottom: 50px;
 `;
 
 class Order extends Component {
@@ -53,7 +54,7 @@ class Order extends Component {
     }
 
     render() { 
-        const { restaurant, mealTotal } = this.props;
+        const { restaurant, totalSelectedMeals } = this.props;
 
         return restaurant.length !== 0 ? (
             <Container className="container">
@@ -147,9 +148,9 @@ class Order extends Component {
                                                     <img className="image is-64-64" src={meal.img} alt={meal.name} />
                                                 </figure>
                                             </td>
-                                            <td>{meal.name}</td>
-                                            <td>{meal.description}</td>
-                                            <td>${meal.price}</td>
+                                            <td>{ meal.name }</td>
+                                            <td>{ meal.description }</td>
+                                            <td>{ toCurrency(meal.price) }</td>
                                             <td>
                                                 <div className="select">
                                                     <select onChange={this.onChagenQty} id={id}>
@@ -158,14 +159,14 @@ class Order extends Component {
                                                     </select>
                                                 </div>
                                             </td>
-                                            <td>{ mealTotal[id] ? ( mealTotal[id].total !== "" ? '$' : '' ) + mealTotal[id].total : '' }</td>
+                                            <td>{ totalSelectedMeals[id] ? toCurrency(totalSelectedMeals[id].total) : '' }</td>
                                         </tr>
                                     )
                                 })
                             }
 
                             <tr>
-                                <td colSpan="6"><h2 className="has-text-right">{ loopOverTotals(mealTotal) !== 0 ? 'Total $' + loopOverTotals(mealTotal) : '' }</h2></td>
+                                <td colSpan="6"><h2 className="has-text-right">{ loopOverTotals(totalSelectedMeals) !== 0 ? 'Total ' + toCurrency(loopOverTotals(totalSelectedMeals)) : '' }</h2></td>
                             </tr>
                             
                         </tbody>

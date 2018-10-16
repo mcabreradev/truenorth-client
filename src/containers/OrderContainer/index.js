@@ -6,7 +6,7 @@ const mapStateToProps = state => ({
     restaurant: state.data.restaurant,
     isModalActive: state.data.isModalActive,
     reviewedRestaurant: state.data.reviewedRestaurant,
-    mealTotal: state.data.totals,
+    totalSelectedMeals: state.data.totalSelectedMeals,
 });
 
 const mapActionToProps = {
