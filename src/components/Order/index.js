@@ -4,6 +4,7 @@ import CustomerDetails from './CustomerDetails';
 import MealsDetails from './MealsDetails';
 import styled from 'styled-components';
 import { loopOverTotals } from '../../util';
+import {Restaurant} from '../index'
 
 const Container = styled.div`
   top: 40px;
@@ -61,7 +62,7 @@ class Order extends Component {
                                 Dear { orderDetails.name.name }, your order was confirmed!
                             </h1>
                             <h2 className="subtitle">
-                                The { restaurant.commercialName } is preparing your food. Your order will be deliver to { orderDetails.address.address } within of 30 minutes.
+                                The { restaurant.commercialName }' restaurant is preparing your food. Your order will be delivered to { orderDetails.address.address } within of 30 minutes.
                             </h2>
                             <p>Thanks for trust in us.. </p>
                         </div>
