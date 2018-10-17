@@ -15,16 +15,7 @@ const Header = () => (
 
     <div className="navbar-menu">
         <div className="navbar-end">
-            <div className="navbar-item">
-                <div className="field is-grouped">
-                <p className="control">
-                    <a className="bd-tw-button button" data-social-network="Github" data-social-action="tweet" data-social-target="https://github.com/mcabreradev/truenorth-client" href="https://github.com/mcabreradev/truenorth-client">
-                    <span className="icon"><i className="fab fa-github"></i></span>
-                    <span>Fork me</span>
-                    </a>
-                </p>
-                </div>
-            </div>
+    
         </div>
     </div>
   </nav>
