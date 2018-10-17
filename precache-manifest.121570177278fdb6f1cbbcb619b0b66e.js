@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/truenorth-client/static/js/runtime~main.8d619130.js"
   },
   {
-    "revision": "c65ab14954d47587dd5b",
-    "url": "/truenorth-client/static/js/main.c65ab149.chunk.js"
+    "revision": "f1ba5ab7ac8810b1ae3e",
+    "url": "/truenorth-client/static/js/main.f1ba5ab7.chunk.js"
   },
   {
     "revision": "a60d9011311a9d39289b",
     "url": "/truenorth-client/static/js/1.a60d9011.chunk.js"
   },
   {
-    "revision": "c65ab14954d47587dd5b",
+    "revision": "f1ba5ab7ac8810b1ae3e",
     "url": "/truenorth-client/static/css/main.1b7d6c59.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/truenorth-client/static/css/1.b40290ac.chunk.css"
   },
   {
-    "revision": "95c278635e335a281e6e4e111c59e6a3",
+    "revision": "66d95a5fabe46fb0d2464c16abefc472",
     "url": "/truenorth-client/index.html"
   }
 ];
