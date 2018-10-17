@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchRestaurantById, toggleModal, setTotalPrice } from '../../store/actions/actions';
+import { fetchRestaurantById, toggleModal, setTotalPrice, setOrderDetails } from '../../store/actions/actions';
 import { Order } from '../../components';
 
 const mapStateToProps = state => ({
@@ -7,12 +7,14 @@ const mapStateToProps = state => ({
     isModalActive: state.data.isModalActive,
     reviewedRestaurant: state.data.reviewedRestaurant,
     totalSelectedMeals: state.data.totalSelectedMeals,
+    orderDetails: state.data.orderDetails,
 });
 
 const mapActionToProps = {
     fetchRestaurantById,
     toggleModal,
-    setTotalPrice
+    setTotalPrice,
+    setOrderDetails
 };
 
 export default connect(mapStateToProps, mapActionToProps)(Order);

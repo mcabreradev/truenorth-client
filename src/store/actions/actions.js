@@ -7,6 +7,7 @@ import {
     TOGGLE_LOADING,
     TOGGLE_MODAL,
     SET_TOTAL_PRICE,
+    SET_ORDER_DETAILS,
 } from './types';
 import { filterRestaurants } from '../../util';
 import { findAll, findById } from '../../util/api';
@@ -138,6 +139,17 @@ export const setTotalPrice = (total, mealId) => (dispatch) => {
             type: SET_TOTAL_PRICE,
             total: total,
             mealId
+        });
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+export const setOrderDetails= (details) => (dispatch) => {
+    try {
+        dispatch({
+            type: SET_ORDER_DETAILS,
+            payload: details
         });
     } catch (error) {
         console.error(error);

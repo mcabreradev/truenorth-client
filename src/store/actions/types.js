@@ -6,3 +6,4 @@ export const SET_SORTBY = "SET_SORTBY";
 export const TOGGLE_LOADING = "TOGGLE_LOADING";
 export const TOGGLE_MODAL = "TOGGLE_MODAL";
 export const SET_TOTAL_PRICE = "SET_TOTAL_PRICE";
+export const SET_ORDER_DETAILS = "SET_ORDER_DETAILS";

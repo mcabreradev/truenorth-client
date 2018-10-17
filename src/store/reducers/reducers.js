@@ -7,6 +7,7 @@ import {
   TOGGLE_LOADING,
   TOGGLE_MODAL,
   SET_TOTAL_PRICE,
+  SET_ORDER_DETAILS,
   } from '../actions/types';
   
   const initialState = {
@@ -18,7 +19,8 @@ import {
     isLoading: false,
     isModalActive: false,
     reviewedRestaurant: [],
-    totalSelectedMeals: []
+    totalSelectedMeals: [],
+    orderDetails: {}
   };
   
   export default function (state = initialState, action) {
@@ -77,6 +79,17 @@ import {
             }
           }
         };
+
+      case SET_ORDER_DETAILS:
+      const key = Object.keys(action.payload)[0];
+      state.orderDetails[key] = {
+        ...state.orderDetails[key],
+        [key] : action.payload[key]
+      }
+
+      return {
+        ...state
+      }
   
       default:
         return state;
