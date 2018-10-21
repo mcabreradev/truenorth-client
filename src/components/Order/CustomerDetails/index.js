@@ -10,12 +10,11 @@ class CustomerDetails extends Component {
         this.onChange = this.onChange.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
-        this.state = { address: '' };
+        this.state = { address: '' , name: ''};
     }
 
     onChange(e) {
-        console.log(e.target.name, e.target.value);
-        this.props.setOrderDetails({[e.target.name]: e.target.value});
+        this.props.setOrderDetailsAction({[e.target.name]: e.target.value});
     }
 
     handleChange = address => {
@@ -26,7 +25,7 @@ class CustomerDetails extends Component {
         this.setState({ address });
 
         geocodeByAddress(address)
-            .then(results => this.props.setOrderDetails({address: results[0].formatted_address}))
+            .then(results => this.props.setOrderDetailsAction({address: results[0].formatted_address}))
             .catch(error => console.error('Error', error));
     };
 

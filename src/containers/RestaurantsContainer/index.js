@@ -1,19 +1,20 @@
 import { connect } from 'react-redux';
-import { fetchRestaurants, toggleModal } from '../../store/actions/actions';
+import { fetchRestaurantsAction } from '../../store/actions/restaurantActions';
+import { toggleModalAction } from '../../store/actions/appActions';
 import { Restaurants } from '../../components';
 
 const mapStateToProps = state => ({
-    restaurants: state.data.filteredRestaurants,
-    name: state.data.name,
-    isLoading: state.data.isLoading,
-    selectedSortby: state.data.selectedSortby ? state.data.selectedSortby : false,
-    isModalActive: state.data.isModalActive,
-    reviewedRestaurant: state.data.reviewedRestaurant,
+    restaurants: state.restaurant.filteredRestaurants,
+    name: state.filter.name,
+    selectedSortby: state.filter.selectedSortby ? state.filter.selectedSortby : false,
+    isLoading: state.app.isLoading,
+    isModalActive: state.app.isModalActive,
+    reviewedRestaurant: state.app.reviewedRestaurant,
 });
 
 const mapActionToProps = {
-    fetchRestaurants,
-    toggleModal
+    fetchRestaurantsAction,
+    toggleModalAction
 };
 
 export default connect(mapStateToProps, mapActionToProps)(Restaurants);

@@ -1,9 +1,8 @@
 export const filterRestaurants = (state) => {
 
     const {
-        restaurants,
-        name,
-        sortBy
+        restaurant: { restaurants },
+        filter: { name, sortBy },
     } = state;
 
     return restaurants.filter(restaurant => {

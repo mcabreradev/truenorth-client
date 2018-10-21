@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
-import { setName, setSortBy } from '../../store/actions/actions';
+import { setNameAction, setSortByAction } from '../../store/actions/filterActions';
 import { Filters } from '../../components';
 
 const mapStateToProps = state => ({
-    name: state.data.name,
-    sortBy: state.data.sortBy
+    name: state.filter.name,
+    sortBy: state.filter.sortBy
  });
 
  const mapActionToProps = {
-    setName,
-    setSortBy,
+    setNameAction,
+    setSortByAction,
 };
 
 export default connect(mapStateToProps, mapActionToProps)(Filters);

@@ -4,7 +4,6 @@ import CustomerDetails from './CustomerDetails';
 import MealsDetails from './MealsDetails';
 import styled from 'styled-components';
 import { loopOverTotals } from '../../util';
-import {Restaurant} from '../index'
 
 const Container = styled.div`
   top: 40px;
@@ -22,16 +21,14 @@ class Order extends Component {
         this.state = {
             isSubmitted: false
         }
-        console.log(this.state);
     }
 
     onClickHandler(){
         this.setState({isSubmitted: true});
-        console.log(this.state);
     }
 
     componentWillMount() {
-        this.props.fetchRestaurantById(this.props.match.params.id);
+        this.props.fetchRestaurantByIdAction(this.props.match.params.id);
      }
 
     render() { 
@@ -59,10 +56,10 @@ class Order extends Component {
                     <div className="hero-body">
                         <div className="container">
                             <h1 className="title">
-                                Dear { orderDetails.name.name }, your order was confirmed!
+                                Dear { orderDetails.name }, your order was confirmed!
                             </h1>
                             <h2 className="subtitle">
-                                The { restaurant.commercialName }' restaurant is preparing your food. Your order will be delivered to { orderDetails.address.address } within of 30 minutes.
+                                The { restaurant.commercialName }' restaurant is preparing your food. Your order will be delivered to { orderDetails.address } within of 30 minutes.
                             </h2>
                             <p>Thanks for trust in us.. </p>
                         </div>

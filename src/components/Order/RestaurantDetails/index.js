@@ -11,7 +11,7 @@ class RestaurantDetails extends Component {
     }
 
     onClickHandlerOpenReview(){
-        this.props.toggleModal(true, this.props.restaurant._id);
+        this.props.toggleModalAction(true, this.props.restaurant._id);
     }
 
     render() { 

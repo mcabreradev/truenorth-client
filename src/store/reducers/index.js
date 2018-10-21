@@ -1,7 +1,12 @@
 import { combineReducers } from 'redux';
-
-import data from './reducers';
+import restaurant from './restaurantReducer';
+import app from './appReducers';
+import filter from './filterReducer';
+import order from './orderReducers';
 
 export default combineReducers({
-    data
+    restaurant,
+    app,
+    filter,
+    order,
 });

@@ -17,11 +17,11 @@ class Restaurants extends Component {
     }
 
     componentWillMount() {
-       this.props.fetchRestaurants();
+       this.props.fetchRestaurantsAction();
     }
 
     onClickHandlerOpenReview(resto_id){
-        this.props.toggleModal(true, resto_id);
+        this.props.toggleModalAction(true, resto_id);
     }
 
     render() { 

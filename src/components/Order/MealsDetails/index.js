@@ -17,7 +17,7 @@ class MealsDetails extends Component {
         
         if(total === 0) { total = "";}
 
-        this.props.setTotalPrice(total, parseInt(e.target.id));
+        this.props.setTotalPriceAction(total, parseInt(e.target.id));
     }
 
     onChange(e) {

@@ -10,7 +10,7 @@ class Modal extends Component {
     }
 
     onClick(e) {
-        this.props.toggleModal(false);
+        this.props.toggleModalAction(false);
     }
 
     render() { 

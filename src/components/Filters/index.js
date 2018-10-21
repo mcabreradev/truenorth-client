@@ -10,11 +10,11 @@ class Filters extends Component {
     onChange(e) {
         switch (e.target.name) {
             case "name":
-                this.props.setName(e.target.value);
+                this.props.setNameAction(e.target.value);
                 break;
             
             case "sortBy":
-                this.props.setSortBy(e.target.value);
+                this.props.setSortByAction(e.target.value);
                 break;
         
             default:
