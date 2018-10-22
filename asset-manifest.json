@@ -1,15 +1,15 @@
 {
   "main.css": "/truenorth-client/static/css/main.1b7d6c59.chunk.css",
-  "main.js": "/truenorth-client/static/js/main.b3f329d6.chunk.js",
-  "main.js.map": "/truenorth-client/static/js/main.b3f329d6.chunk.js.map",
+  "main.js": "/truenorth-client/static/js/main.a60c487d.chunk.js",
+  "main.js.map": "/truenorth-client/static/js/main.a60c487d.chunk.js.map",
   "static/css/1.b40290ac.chunk.css": "/truenorth-client/static/css/1.b40290ac.chunk.css",
-  "static/js/1.d33c6982.chunk.js": "/truenorth-client/static/js/1.d33c6982.chunk.js",
-  "static/js/1.d33c6982.chunk.js.map": "/truenorth-client/static/js/1.d33c6982.chunk.js.map",
+  "static/js/1.f21241ca.chunk.js": "/truenorth-client/static/js/1.f21241ca.chunk.js",
+  "static/js/1.f21241ca.chunk.js.map": "/truenorth-client/static/js/1.f21241ca.chunk.js.map",
   "runtime~main.js": "/truenorth-client/static/js/runtime~main.8d619130.js",
   "runtime~main.js.map": "/truenorth-client/static/js/runtime~main.8d619130.js.map",
-  "static/css/1.b40290ac.chunk.css.map": "/truenorth-client/static/css/1.b40290ac.chunk.css.map",
   "static/css/main.1b7d6c59.chunk.css.map": "/truenorth-client/static/css/main.1b7d6c59.chunk.css.map",
+  "static/css/1.b40290ac.chunk.css.map": "/truenorth-client/static/css/1.b40290ac.chunk.css.map",
   "index.html": "/truenorth-client/index.html",
-  "precache-manifest.2acd0ba733be4c6cc48e7f5dddf7f1c1.js": "/truenorth-client/precache-manifest.2acd0ba733be4c6cc48e7f5dddf7f1c1.js",
+  "precache-manifest.cc018c9a054052eb50200a785fb96438.js": "/truenorth-client/precache-manifest.cc018c9a054052eb50200a785fb96438.js",
   "service-worker.js": "/truenorth-client/service-worker.js"
 }
