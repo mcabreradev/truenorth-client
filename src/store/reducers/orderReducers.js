@@ -2,7 +2,8 @@ import { ORDER } from '../actions/orderActions';
   
   const initialState = {
     totalSelectedMeals: [],
-    orderDetails: {}
+    orderDetails: {},
+    distances: [],
   };
   
   export default function (state = initialState, action) {
@@ -20,12 +21,18 @@ import { ORDER } from '../actions/orderActions';
         };
 
       case ORDER.SET_ORDER_DETAILS:
-      const key = Object.keys(action.payload)[0];
-      state.orderDetails[key] = action.payload[key]
+      const keys = Object.keys(action.payload);
+      keys.map(key => state.orderDetails[key] = action.payload[key]);
 
       return {
         ...state
       }
+
+    case ORDER.SET_DISTANCES:
+      return {
+        ...state,
+        distances: action.payload
+      };
   
       default:
         return state;

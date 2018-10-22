@@ -25,6 +25,7 @@ class Order extends Component {
 
     onClickHandler(){
         this.setState({isSubmitted: true});
+        // this.props.getDistances()
     }
 
     componentWillMount() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PlacesAutocomplete, {
-    geocodeByAddress
+    geocodeByAddress, getLatLng
   } from 'react-places-autocomplete';
 
 class CustomerDetails extends Component {
@@ -14,7 +14,8 @@ class CustomerDetails extends Component {
     }
 
     onChange(e) {
-        this.props.setOrderDetailsAction({[e.target.name]: e.target.value});
+        // this.props.setOrderDetailsAction({[e.target.name]: e.target.value});
+
     }
 
     handleChange = address => {
@@ -25,8 +26,13 @@ class CustomerDetails extends Component {
         this.setState({ address });
 
         geocodeByAddress(address)
-            .then(results => this.props.setOrderDetailsAction({address: results[0].formatted_address}))
-            .catch(error => console.error('Error', error));
+            .then(results => {
+                getLatLng(results[0]).then( location =>  {
+                    this.props.setOrderDetailsAction({ location: location, address: results[0].formatted_address });
+                    this.props.getDistances();
+                });
+            })
+            .catch(error => console.error(error));
     };
 
     render() { 
