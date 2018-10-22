@@ -23,7 +23,6 @@ export const setTotalPriceAction = (total, mealId) => (dispatch) => {
 };
 
 export const setOrderDetailsAction = (details) => (dispatch) => {
-    console.log(details);
     try {
         dispatch({
             type: ORDER.SET_ORDER_DETAILS,
@@ -46,16 +45,12 @@ export const getDistances = () => async (dispatch, getState) => {
         destination: getState().order.orderDetails.location
      }
 
-    // console.log(coordinates);
-
     try {
         const response = await getDistance(coordinates);
 
-        console.log(response); 
-
         dispatch({
             type: ORDER.SET_DISTANCES,
-            payload: response
+            payload: response.data.rows[0].elements[0]
         });
 
         dispatch({

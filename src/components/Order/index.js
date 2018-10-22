@@ -25,15 +25,14 @@ class Order extends Component {
 
     onClickHandler(){
         this.setState({isSubmitted: true});
-        // this.props.getDistances()
     }
 
     componentWillMount() {
         this.props.fetchRestaurantByIdAction(this.props.match.params.id);
-     }
+    }
 
     render() { 
-        const { restaurant,  totalSelectedMeals, orderDetails } = this.props;
+        const { restaurant,  totalSelectedMeals, orderDetails, distances } = this.props;
         const { isSubmitted } = this.state;
 
         return restaurant.length !== 0  && !isSubmitted ? (
@@ -60,7 +59,7 @@ class Order extends Component {
                                 Dear { orderDetails.name }, your order was confirmed!
                             </h1>
                             <h2 className="subtitle">
-                                The { restaurant.commercialName }' restaurant is preparing your food. Your order will be delivered to { orderDetails.address } within of 30 minutes.
+                                The { restaurant.commercialName }' restaurant is preparing your food. Your order will be delivered to { orderDetails.address } within of { distances.duration.text }. 
                             </h2>
                             <p>Thanks for trust in us.. </p>
                         </div>
