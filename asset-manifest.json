@@ -1,15 +1,15 @@
 {
-  "main.css": "/truenorth-client/static/css/main.1b7d6c59.chunk.css",
-  "main.js": "/truenorth-client/static/js/main.a60c487d.chunk.js",
-  "main.js.map": "/truenorth-client/static/js/main.a60c487d.chunk.js.map",
-  "static/css/1.b40290ac.chunk.css": "/truenorth-client/static/css/1.b40290ac.chunk.css",
-  "static/js/1.f21241ca.chunk.js": "/truenorth-client/static/js/1.f21241ca.chunk.js",
-  "static/js/1.f21241ca.chunk.js.map": "/truenorth-client/static/js/1.f21241ca.chunk.js.map",
-  "runtime~main.js": "/truenorth-client/static/js/runtime~main.8d619130.js",
-  "runtime~main.js.map": "/truenorth-client/static/js/runtime~main.8d619130.js.map",
-  "static/css/main.1b7d6c59.chunk.css.map": "/truenorth-client/static/css/main.1b7d6c59.chunk.css.map",
-  "static/css/1.b40290ac.chunk.css.map": "/truenorth-client/static/css/1.b40290ac.chunk.css.map",
-  "index.html": "/truenorth-client/index.html",
-  "precache-manifest.cc018c9a054052eb50200a785fb96438.js": "/truenorth-client/precache-manifest.cc018c9a054052eb50200a785fb96438.js",
-  "service-worker.js": "/truenorth-client/service-worker.js"
+  "main.css": "/truenorth-challenge/static/css/main.ce425d16.chunk.css",
+  "main.js": "/truenorth-challenge/static/js/main.8f0b1a6c.chunk.js",
+  "main.js.map": "/truenorth-challenge/static/js/main.8f0b1a6c.chunk.js.map",
+  "static/css/1.b548c782.chunk.css": "/truenorth-challenge/static/css/1.b548c782.chunk.css",
+  "static/js/1.4f655b57.chunk.js": "/truenorth-challenge/static/js/1.4f655b57.chunk.js",
+  "static/js/1.4f655b57.chunk.js.map": "/truenorth-challenge/static/js/1.4f655b57.chunk.js.map",
+  "runtime~main.js": "/truenorth-challenge/static/js/runtime~main.118cf7de.js",
+  "runtime~main.js.map": "/truenorth-challenge/static/js/runtime~main.118cf7de.js.map",
+  "static/css/main.ce425d16.chunk.css.map": "/truenorth-challenge/static/css/main.ce425d16.chunk.css.map",
+  "static/css/1.b548c782.chunk.css.map": "/truenorth-challenge/static/css/1.b548c782.chunk.css.map",
+  "index.html": "/truenorth-challenge/index.html",
+  "precache-manifest.e14565b23a9cec13d02e4d7c0ff9a207.js": "/truenorth-challenge/precache-manifest.e14565b23a9cec13d02e4d7c0ff9a207.js",
+  "service-worker.js": "/truenorth-challenge/service-worker.js"
 }

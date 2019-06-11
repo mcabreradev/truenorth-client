@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/truenorth-client/precache-manifest.cc018c9a054052eb50200a785fb96438.js"
+  "/truenorth-challenge/precache-manifest.e14565b23a9cec13d02e4d7c0ff9a207.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/truenorth-client/index.html", {
+workbox.routing.registerNavigationRoute("/truenorth-challenge/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
